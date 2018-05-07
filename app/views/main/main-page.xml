@@ -1,0 +1,28 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="onMainLoaded" actionBarHidden="true">
+	<GridLayout columns="*,*" rows="*,*,*">
+		<StackLayout row="0" col="0" tap="{{start}}" class="main-block">
+			<Image src="~/images//Start.png" class="main-image" />
+			<Label text="Start" color="#e74c3c" class="label-info-1"/>
+		</StackLayout>
+		<StackLayout row="0" col="1" tap="{{follow}}" class="main-block">
+			<Image src="~/images/Follow.png" class="main-image" />
+			<Label text="Follow" color="#e67e22" class="label-info-1"/>
+		</StackLayout>
+		<StackLayout row="1" col="0" tap="{{trainings}}" class="main-block">
+			<Image src="~/images/Trainings.png" class="main-image" />
+			<Label text="Trainings" color="#f1c40f" class="label-info-1"/>
+		</StackLayout>
+		<StackLayout row="1" col="1" tap="{{statistic}}" class="main-block">
+			<Image src="~/images/Statistics.png" class="main-image" />
+			<Label text="Statistic" color="#2ecc71" class="label-info-1"/>
+		</StackLayout>
+		<StackLayout row="2" col="0" tap="{{profile}}" class="main-block">
+			<Image src="{{sex ? '~/images/Profile-w.png' : '~/images/Profile-m.png'}}" class="main-image" />
+			<Label text="Profile" color="#2980b9" class="label-info-1"/>
+		</StackLayout>
+		<StackLayout row="2" col="1" tap="{{about}}" class="main-block">
+			<Image src="~/images/About.png" class="main-image" />
+			<Label text="About" color="#8e44ad" class="label-info-1"/>
+		</StackLayout>
+	</GridLayout>
+</Page>

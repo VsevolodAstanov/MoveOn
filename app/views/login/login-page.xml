@@ -1,0 +1,10 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="onLoginLoaded" actionBarHidden="true">
+	<StackLayout verticalAlignment="center">
+		<Image src="~/images/logo.png" stretch="none" horizontalAlignment="center"/>
+
+	    <TextField hint="Email Address" text="{{username}}" keyboardType="email" autocorrect="false" autocapitalizationType="none" />
+		<TextField hint="Password" text="{{password}}" secure="true" />
+
+		<Button text="Sign in" width="120" tap="{{login}}"/>
+	</StackLayout>
+</Page>

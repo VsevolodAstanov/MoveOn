@@ -1,0 +1,4 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="onProfileLoaded" actionBarHidden="true">
+			<Label text="Profile" color="#f1c40f" cssClass="label-info-1"/>
+
+</Page>

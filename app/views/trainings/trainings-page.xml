@@ -1,0 +1,34 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="onTrainingLoaded" actionBarHidden="true" xmlns:maps="nativescript-google-maps-sdk">
+	<ListView id="itemList" items="{{ trainings }}" class="list-view">
+		<ListView.itemTemplate>
+			<GridLayout columns="5, *, *, 150, 5" rows="5, *, *, *, *, 5" width="100%">
+				<maps:mapView liteMode="true" mapReady="onTRMapReady" width="150" height="150" col="3" row="2" rowSpan="4" class="list-map"/>
+				<StackLayout col="1" row="1">
+					<Label text="{{ trk.name }}" class="list-top-info" />
+				</StackLayout>
+				<StackLayout col="2" row="1" colSpan="2" horizontalAlignment="right">
+					<Label text="{{ trk.info.save_time }}" class="list-top-info" />
+				</StackLayout>
+				<StackLayout col="1" row="2" colSpan="2" horizontalAlignment="center">
+					<Label text="{{ trk.info.time }}" class="list-time" />
+				</StackLayout>
+				<StackLayout col="1" row="3" colSpan="2" horizontalAlignment="center">
+					<Label text="{{ trk.info.distance }}" class="list-distance" />
+				</StackLayout>
+				<StackLayout col="1" row="4" class="list-bottom-info">
+					<Label text="Height" />
+					<Label text="{{'Min: ' + trk.info.altimin + ' m' }}" />
+					<Label text="{{'Max: ' + trk.info.altimax + ' m' }}" />
+				</StackLayout>
+				<StackLayout col="2" row="4" class="list-bottom-info">
+					<Label text="Speed" />
+					<Label text="{{'Avg: ' + trk.info.speedavg }}" />
+					<Label text="{{'Max: ' + trk.info.speedmax + ' km/h' }}" />
+				</StackLayout>
+				<AbsoluteLayout colSpan="4" rowSpan="6" class="item-btn">
+					<Button id="{{ trk.index }}" tap="showDetails" class="item-btn"/>
+				</AbsoluteLayout>
+			</GridLayout>
+		</ListView.itemTemplate>
+	</ListView>
+</Page>

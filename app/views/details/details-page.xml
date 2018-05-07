@@ -1,0 +1,5 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="onDetailsLoaded" actionBarHidden="true">
+
+			<Label text="Details" color="#f1c40f" class="label-info-1"/>
+
+</Page>

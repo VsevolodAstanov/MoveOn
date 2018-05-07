@@ -1,0 +1,5 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="onFollowLoaded" actionBarHidden="true">
+
+			<Label text="Follow" color="#e67e22" cssClass="label-info-1"/>
+		
+</Page>

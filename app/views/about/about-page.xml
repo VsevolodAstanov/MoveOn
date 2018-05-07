@@ -1,0 +1,5 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="onAboutLoaded" actionBarHidden="true">
+
+			<Label text="About" color="#f1c40f" cssClass="label-info-1"/>
+
+</Page>

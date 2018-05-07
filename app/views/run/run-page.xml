@@ -1,0 +1,42 @@
+<Page
+	xmlns="http://www.nativescript.org/tns.xsd"
+	xmlns:maps="nativescript-google-maps-sdk"
+	loaded="onRunLoaded"
+	actionBarHidden="true">
+	
+    <GridLayout columns="*,0*" rows="3*,2*">
+        <maps:mapView col="0" row="0" mapReady="onMapReady" id="map" latitude="{{ latitude }}" longitude="{{ longitude }}" zoom="{{ zoom }}"/>
+		<GridLayout class="start-info" col="0" row="1" columns="*, *, *" rows="*, *" style.backgroundColor="white" >
+			<!--Distance-->
+			<StackLayout row="0" col="0" marginLeft="10%" verticalAlignment="center" class="stack-layout-info info-block" >
+				<Label text="{{ distance }}" class="label-info-1"/>
+				<Label text="Distance" class="label-info-2"/>
+			</StackLayout>
+			<!--Speed-->
+			<StackLayout row="0" col="1" verticalAlignment="center" class="stack-layout-info info-block">
+				<Label text="{{ speed }}" class="label-info-speed"/>
+				<Label text="km/h" class="label-info-speed-attr"/>
+			</StackLayout>
+			<!--Time-->
+			<StackLayout row="0" col="2" marginRight="10%" verticalAlignment="center" class="stack-layout-info info-block">
+				<Label text="{{ time }}" class="label-info-1"/>
+				<Label text="Time" class="label-info-2"/>
+			</StackLayout>
+			<!-- Avetage speed -->
+			<StackLayout row="1" col="0" marginLeft="10%" verticalAlignment="center" class="stack-layout-info info-block">
+				<Label text="{{ average_speed }}" class="label-info-1"/>
+				<Label text="Avg speed" class="label-info-2"/>
+			</StackLayout>
+			<!-- Play/Stop -->
+			<StackLayout row="1" col="1" verticalAlignment="center" class="info-block"> 
+				<Button class="play-btn" borderColor="{{isRecord ? '#f39c12' : '#e74c3c'}}" backgroundImage="{{isRecord ? '~/images/Pause.png' : '~/images/Record.png'}}" tap="{{play}}"/>
+				<Button visibility="{{ showSaveButton ? 'visible' : 'collapsed' }}" class="save-btn" tap="{{save}}"/>
+			</StackLayout>
+			<!-- Altitude -->
+			<StackLayout row="1" col="2" marginRight="10%" verticalAlignment="center" class="info-block">
+				<Label text="{{ altitude }}" class="label-info-1"/>
+				<Label text="Altitude" class="label-info-2"/>
+			</StackLayout>
+		</GridLayout>
+	</GridLayout>
+</Page>
