@@ -3,12 +3,12 @@
 	'use strict';
 
 	var geolocation = require("nativescript-geolocation");
+	var Accuracy =  require('ui/enums');
 	var runViewModel = require("../views/run/run-view-model").mainRunViewModel;
 	var MapService = require("./map-service").MapService;
 	var RunService = require('./run-service').RunService;
 	var TrackService = require('./track-service').TrackService;
 	var timer = require("timer");
-	var onStart = true;
 	var fullDistance = 0;
 	var prevTime;
 	var prevLocation;
@@ -94,12 +94,6 @@
 
 					/* Clear timeout */
 					timer.clearTimeout(pauseTimeout);
-
-					if(onStart){
-						/* Move to the latest point through the animation on Start*/
-						MapService.moveTo(location, onStart);
-						onStart = false;
-					}
 								
 					var dist = geolocation.distance(prevLocation, location);
 					if(isNaN(dist) && !isFinite(dist)) {
@@ -180,7 +174,19 @@
 			} else {
 				this.stop();
 			}
+
 			watcher = geolocation.watchLocation(this.onSuccess, this.onError, this.watchOptions); 
+		}
+
+		GPSservice.prototype.getFirstPosition = function() {
+			/* Move to the latest point through the animation on Start*/
+			var location = geolocation.getCurrentLocation({ desiredAccuracy: 0, maximumAge: 5000, timeout: 1000 });
+
+			for(var i in geolocation) {
+				console.log(i + ' elem');
+			}
+
+			//MapService.moveTo(location, true);
 		}
 
 		GPSservice.prototype.stop = function() {

@@ -33,6 +33,7 @@
 
 				(function waitForEnaibleGPS(){
 					if(geolocation.isEnabled()) {
+						console.log("geolocation.isEnabled()");
 						UISettings.setZoomControlsEnabled(true);
 						return _this._GoogleMap.setMyLocationEnabled(true);
 					} else {

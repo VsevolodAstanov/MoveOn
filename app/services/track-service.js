@@ -8,7 +8,7 @@
         if(storage.hasKey("tracks")) {
             var trackObject = JSON.parse(storage.getString("tracks"));
             for (var i = 0; i < trackObject.length; i++) {
-                trackObject[i].trk.index = i.toString();
+                trackObject[i].trk.index = String(i);
             }
             return trackObject;
         } else {
@@ -102,7 +102,7 @@
 
 		TrackService.prototype.getPointsByTrackID = function(id) {
 			console.log(id);
-			//return tracks[id].trk.trkseg.trkpt;
+			return tracks[id].trk.trkseg.trkpt;
 		};
 
 		TrackService.prototype.save = function() {
