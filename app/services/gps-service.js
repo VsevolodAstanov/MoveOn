@@ -49,7 +49,7 @@
 			prevLocation = null;
 			prevTime = null;
 			watcher = null;
-		}
+		};
 
 		GPSservice.prototype.onSuccess = function(location) {
 
@@ -160,39 +160,34 @@
 			}
 			prevTime = +new Date;
 			prevLocation = location;
-		}
+		};
 
 		GPSservice.prototype.onError = function(err) {
 			console.log("Error: " + err.message);
-		}
+		};
 
 		GPSservice.prototype.watch = function() {
 			if(geolocation.isEnabled()) {
 				if(watcher) {
 					return;
 				}
-			} else {
-				this.stop();
 			}
 
 			watcher = geolocation.watchLocation(this.onSuccess, this.onError, this.watchOptions); 
-		}
+		};
 
 		GPSservice.prototype.getFirstPosition = function() {
 			/* Move to the latest point through the animation on Start*/
-			var location = geolocation.getCurrentLocation({ desiredAccuracy: 0, maximumAge: 5000, timeout: 1000 });
-
-			for(var i in geolocation) {
-				console.log(i + ' elem');
-			}
-
-			//MapService.moveTo(location, true);
-		}
+			geolocation.getCurrentLocation({ desiredAccuracy: Accuracy.HIGH, maximumAge: 5000, timeout: 1000 })
+			.then(function(loc){
+				MapService.moveTo(loc, true);
+			});
+		};
 
 		GPSservice.prototype.stop = function() {
 			geolocation.clearWatch(watcher);
 			watcher = null;
-		}
+		};
 
 		return GPSservice;
 	}());
