@@ -2,7 +2,7 @@
 	<ListView id="itemList" items="{{ trainings }}" class="list-view">
 		<ListView.itemTemplate>
 			<GridLayout columns="5, *, *, 150, 5" rows="5, *, *, *, *, 5" width="100%">
-				<maps:mapView liteMode="true" mapReady="onTRMapReady" width="150" height="150" col="3" row="2" rowSpan="4" class="list-map"/>
+				<maps:mapView liteMode="true" mapReady="onTRMapReady" width="150" height="150" col="3" row="2" rowSpan="4" class="list-map" id="{{trk.index}}"/>
 				<StackLayout col="1" row="1">
 					<Label text="{{ trk.name }}" class="list-top-info" />
 				</StackLayout>

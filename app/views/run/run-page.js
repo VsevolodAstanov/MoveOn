@@ -46,7 +46,6 @@
 		};
 
         if(!vmModule.isRecord) {
-        	console.log('start');
         	GPSservice.getFirstPosition();
 			GPSservice.watch();
 			if(vmModule.time !== '00:00:00') {

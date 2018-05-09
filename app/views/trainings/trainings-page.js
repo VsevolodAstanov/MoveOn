@@ -18,7 +18,9 @@ function onTRMapReady(args) {
 
 	// /* Add track */
 	var mapIndex = args.object.id;
-	console.log(mapIndex + ' Index');
+
+	console.log(mapIndex);
+
 	MapService.addTrackOnLiteMap(args, mapIndex);
 }
 
